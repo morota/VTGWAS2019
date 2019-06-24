@@ -1,6 +1,6 @@
 ---
 title: "Decoding mixed model equations"
-subtitle: "Quantitative Genetics and Genomics Workshop @VT"
+subtitle: "GWAS Workshop @VT"
 author: "Gota Morota <br />[http://morotalab.org/](http://morotalab.org/) <br />"
 date: "2019/6/24"
 output:
@@ -17,7 +17,7 @@ options(htmltools.dir.version = FALSE)
 
 
 
-# About the course  
+# About the workshop  
 - [Website](http://morotalab.org/VTGWAS2019/VTGWAS2019.html)
 
 .pull-left[
