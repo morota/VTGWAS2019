@@ -34,7 +34,8 @@ library(htmlwidgets)
 
 ---
 # MTM-GWAS
-<img src="MTMGWAS.png" height="506px" width="750px"/>
+<img src="MTMGWAS.png" height="406px" width="650px"/>
+
 
 
 ---
