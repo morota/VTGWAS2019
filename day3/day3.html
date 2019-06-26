@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Structural equation model-based GWAS</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Gota Morota  http://morotalab.org/" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Structural equation model-based GWAS
+## GWAS Workshop <span class="citation">@VT</span>
+### Gota Morota <br /><a href="http://morotalab.org/" class="uri">http://morotalab.org/</a> <br />
+### 2019/6/26
+
+---
+
+
+
+
+
+
+
+
+
+# Multivariate traits
+![](MTM1.png)
+
+- Multi-trait GWAS (MTM-GWAS)
+
+- Structural equation model GWAS (SEM-GWAS)
+
+
+---
+# Multiple-trait GWAS (MTM-GWAS)
+&lt;img src="MTM.png" height="506px" width="750px"/&gt;
+
+
+---
+# MTM-GWAS
+&lt;img src="MTMGWAS.png" height="506px" width="750px"/&gt;
+
+
+---
+# Interrelationships among traits 
+![](MTM2.png)
+
+1. Biological prior 
+    - previous experiments
+    - literature
+
+2. Infer from the data
+
+
+---
+# Phenotypic,  genetic, and residual networks
+![](MTM3.png)
+
+
+---
+# Structural equation model GWAS (SEM-GWAS)
+Direct effect of SNP on Trait 4
+
+![](SEM1.png)
+
+---
+# SEM-GWAS
+Indirect effect of SNP on Trait 4 through Trait 1 (1)
+
+![](SEM2.png)
+
+
+---
+# SEM-GWAS
+Indirect effect of SNP on Trait 4 through Trait 2 (2)
+
+![](SEM3.png)
+
+
+---
+# SEM-GWAS
+Indirect effect of SNP on Trait 4 through Trait 2 &amp; 3 (3)
+
+![](SEM4.png)
+
+
+
+---
+# SEM-GWAS
+Indirect effect of SNP on Trait 4 through Trait 3 (4)
+
+![](SEM5.png)
+
+---
+# SEM-GWAS vs. MTM-GWAS
+Effect of SNP on Trait 4
+
+&lt;img src="MTM4.png" height="306px" width="400px"/&gt;
+
+
+`\begin{align*}
+     \text{Effect of SNP (MTM-GWAS)} &amp;\approx \text{Overall effect (SEM-GWAS)}\\
+     &amp;= \text{Direct effect (SEM-GWAS)} \\
+     &amp;+ \text{Indirect effect (SEM-GWAS)} 
+\end{align*}`
+
+
+
+---
+# How to fit SEM-GWAS?
+
+1. Fit MTM and decompose phenotypes into genetics and residuals
+
+2. Infer the network structure of traits
+
+3. Fit SEM-GWAS given the network structure
+
+
+Example 1: Chicken data (n = 1,351),  Momen et al. (2018)
+
+- breast muscle (BM)
+
+- body weight (BW)
+
+- hen-house egg production (HHP)
+
+
+---
+# Inferred network structure (1)
+&lt;img src="chickenSEM1.png" height="276px" width="600px"/&gt;
+
+Structual equation model
+
+&lt;img src="chickenSEM5.png" height="166px" width="500px"/&gt;
+
+
+---
+# Inferred network structure (2)
+&lt;img src="chickenSEM1.png" height="276px" width="600px"/&gt;
+
+Structual equation model
+
+&lt;img src="chickenSEM3.png" height="56px" width="250px"/&gt;
+&lt;img src="chickenSEM4.png" height="106px" width="500px"/&gt;
+
+
+---
+# Inferred network structure (3)
+&lt;img src="chickenSEM1.png" height="276px" width="600px"/&gt;
+
+Decomposition of SNP effects 
+&lt;img src="chickenSEM2.png" height="176px" width="500px"/&gt;
+
+
+---
+# Manhattan plots of BW (overall, direct, and indirect SNP effects)
+&lt;img src="chickenSEM6.png" height="426px" width="560px"/&gt;
+
+
+---
+# More details about Chicken SEM-GWAS
+&lt;img src="frontiers.png" height="400px" width="690px"/&gt;
+
+
+---
+# Rice data
+
+- Drought data
+- Rice diversity panel
+    - Projected shoot area
+    - Root biomass
+    - Water use efficiency
+    - Water use
+  
+Inferred trait network structure
+&lt;img src="riceSEM1.png" height="326px" width="460px"/&gt;
+
+
+---
+# Inferred trait network structure
+&lt;img src="riceSEM3.png" height="426px" width="700px"/&gt;
+
+
+---
+# Structural equation model GWAS (SEM-GWAS)
+`\begin{align*}
+\mathbf{y} =\boldsymbol{\Lambda}  \mathbf{y} + \mathbf{ws} + \mathbf{Zg} + \boldsymbol{\epsilon}
+\end{align*}`
+
+&lt;img src="riceSEM2.png" height="426px" width="600px"/&gt;
+
+---
+# Structural equation coefficients
+&lt;img src="riceSEM4.png" height="506px" width="700px"/&gt;
+
+---
+# Projected shoot area
+
+`\begin{align*}
+\text{Direct}_{s_j \rightarrow y_{1_{\text{PSA}}}} &amp;= s_{j(y_{1_{\text{PSA}}})} \\
+\text{Total}_{s_j \rightarrow y_{1_{\text{PSA}}}} &amp;= \text{Direct}_{s_j \rightarrow y_{1_{\text{PSA}}}}\\
+&amp;= s_{j(y_{1_{\text{PSA}}})}
+\end{align*}`
+
+&lt;img src="riceSEM5.png" height="406px" width="700px"/&gt;
+
+
+
+---
+# Root biomass
+`\begin{align*}
+\text{Direct}_{s_j \rightarrow y_{2_{\text{RB}}}} &amp;=s_{j(y_{2_{\text{RB}}})} \\
+\text{Total}_{s_j \rightarrow y_{2_{\text{RB}}}} &amp;= \text{Direct}_{s_j \rightarrow y_{2_{\text{RB}}}}\\
+&amp;= s_{j(y_{2_{\text{RB}}})}
+\end{align*}`
+
+&lt;img src="riceSEM6.png" height="406px" width="700px"/&gt;
+
+
+---
+# Water use
+`\begin{align*}
+\text{Direct}_{s_j \rightarrow y_{3_{\text{WU}}}} &amp;=s_{j(y_{3_{\text{WU}}})} \\
+\text{Indirect(1)}_{s_j \rightarrow y_{3_{\text{WU}}}} &amp;= \lambda_{13}s_{j(y_{1_{\text{PSA}}})} \\
+\text{Indirect(2)}_{s_j \rightarrow y_{3_{\text{WU}}}} &amp;= \lambda_{23}s_{j(y_{2_{\text{RB}}})} \\
+\text{Total}_{s_j \rightarrow y_{2_{\text{WU}}}} &amp;= \text{Direct}_{s_j \rightarrow y_{2_{\text{WU}}}} + \text{Indirect(1)}_{s_j \rightarrow y_{3_{\text{WU}}}} + \text{Indirect(2)}_{s_j \rightarrow y_{3_{\text{WU}}}}\\
+&amp;= s_{j(y_{3_{\text{WU}}})} + \lambda_{13}s_{j(y_{1_{\text{PSA}}})} + \lambda_{23}s_{j(y_{2_{\text{RB}}})}
+\end{align*}`
+
+&lt;img src="riceSEM7.png" height="336px" width="700px"/&gt;
+
+
+---
+# Water use efficiency
+`\begin{align*}
+\text{Direct}_{s_j \rightarrow y_{4_{\text{WUE}}}} &amp;=s_{j(y_{4_{\text{WUE}}})} \\
+\text{Indirect(1)}_{s_j \rightarrow y_{4_{\text{WUE}}}} &amp;= \lambda_{14}s_{j(y_{1_{\text{PSA}}})} \\
+\text{Indirect(2)}_{s_j \rightarrow y_{4_{\text{WUE}}}} &amp;= \lambda_{34}s_{j(y_{3_{\text{WU}}})} \\
+\text{Indirect(3)}_{s_j \rightarrow y_{4_{\text{WUE}}}} &amp;= \lambda_{13}\lambda_{34}s_{j(y_{1_{\text{PSA}}})} \\
+\text{Indirect(4)}_{s_j \rightarrow y_{4_{\text{WUE}}}} &amp;= \lambda_{23}\lambda_{34}s_{j(y_{2_{\text{RB}}})} \\
+\text{Total}_{S_j \rightarrow y_{4_{\text{WUE}}}} &amp;= \text{Direct}_{s_j \rightarrow y_{4_{\text{WUE}}}} + \text{Indirect(1)}_{s_j \rightarrow y_{4_{\text{WUE}}}} \\
+&amp;+ \text{Indirect(2)}_{s_j \rightarrow y_{4_{\text{WUE}}}} + \text{Indirect(3)}_{s_j \rightarrow y_{4_{\text{WUE}}}} \\
+&amp;+ \text{Indirect(4)}_{s_j \rightarrow y_{4_{\text{WUE}}}}\\
+&amp;= s_{j(y_{4_{\text{WUE}}})} + \lambda_{14}s_{j(y_{1_{\text{PSA}}})} + \lambda_{34}s_{j(y_{3_{\text{WU}}})} \\
+&amp;+ \lambda_{13}\lambda_{34}s_{j(y_{1_{\text{PSA}}})} + \lambda_{23}\lambda_{34}s_{j(y_{2_{\text{RB}}})} 
+\end{align*}`
+
+---
+# Water use efficiency
+&lt;img src="riceSEM8.png" height="536px" width="700px"/&gt;
+
+---
+# Preprint
+&lt;img src="riceSEM9.png" height="436px" width="650px"/&gt;
+
+
+---
+# Ongoing SEM-GWAS projects
+
+- Italian Brown Swiss cattle (University of Padua)
+    - Milk yield
+    
+    - Milk pH
+    
+    - Milk lactose
+    
+    - Somatic cell score
+    
+    - Non-casein N
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
