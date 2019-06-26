@@ -33,13 +33,15 @@ library(htmlwidgets)
 
 
 ---
+# MTM-GWAS
+<img src="MTMGWAS.png" height="506px" width="750px"/>
+
+
+---
 # Multiple-trait GWAS (MTM-GWAS)
 <img src="MTM.png" height="506px" width="750px"/>
 
 
----
-# MTM-GWAS
-<img src="MTMGWAS.png" height="506px" width="750px"/>
 
 
 ---
