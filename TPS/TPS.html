@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>The Morota Lab</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Gota Morota  http://morotalab.org/" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# The Morota Lab
+## TPS 2019 Orientation Week
+### Gota Morota <br /><a href="http://morotalab.org/" class="uri">http://morotalab.org/</a> <br />
+### 2019/8/21
+
+---
+
+
+
+
+
+
+# About me 
+![](map.png)
+
+
+
+
+
+
+
+---
+
+# Complex traits
+&lt;img src="phenotype-plant.png" width=800 height=530&gt;
+
+
+
+
+---
+# Genetic values
+Quantitative genetic model:
+
+`\begin{align*}
+\mathbf{y} &amp;= \mathbf{g} + \boldsymbol{\epsilon} \\
+\end{align*}`
+where `\(\mathbf{y}\)` is the vector of observed phenotypes, `\(\mathbf{g}\)` is the vector of genetic values, and `\(\boldsymbol{\epsilon}\)` is the vector of residuals. 
+
+Example:
+
+| Plant ID   | y           | g  |   e  |
+| ------------- |:-------------:| -----:|------|
+| 1      | 10 | ? |  ?     |
+| 2      |  7     |   ? |  ?    |
+| 3 | 12     |    ? |    ? |
+
+
+
+
+---
+# Genetic values
+Quantitative genetic model:
+
+`\begin{align*}
+\mathbf{y} &amp;= \mathbf{g} + \boldsymbol{\epsilon} \\
+\end{align*}`
+where `\(\mathbf{y}\)` is the vector of observed phenotypes, `\(\mathbf{g}\)` is the vector of genetic values, and `\(\boldsymbol{\epsilon}\)` is the vector of residuals. 
+
+Example:
+
+| Plant ID    | y           | g  |   e  |
+| ------------- |:-------------:| -----:|------|
+| 1      | 10 | 5 |  5     |
+| 2      |  7     |   6 |  1    |
+| 3 | 12     |    2 |    10 |
+
+
+--
+
+Phenotypes can be observed and measured but genotypic and additive genetic effects cannot
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+# Precision agriculture using advanced technologies
+![](precision-plant.png)
+
+
+
+---
+# Precision (digital) phenotyping
+![](plant-digit.png)
+
+
+.pull-left[
+- automated process
+
+- less labor intensive
+
+- less prone to measurement error
+]
+
+.pull-right[
+&lt;iframe src="https://giphy.com/embed/wW95fEq09hOI8" width="400" height="160" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/chihuahua-funny-cute-wW95fEq09hOI8"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+]
+
+
+
+---
+# High-throughput phenomics
+.pull-left[
+&lt;div align="left"&gt;
+&lt;iframe src="https://innovate.unl.edu/video/leasing-options/greenhouse-innovation-center.mp4" width="250" height="150" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href="https://innovate.unl.edu/greenhouse-innovation-center"&gt;UNL Greenhouse Innovation Center&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div align="left"&gt;
+&lt;iframe width="260" height="200" src="https://www.youtube.com/embed/wor4BFjbIyI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=wor4BFjbIyI"&gt;Spidercam&lt;/a&gt;
+&lt;/div&gt;
+
+]
+
+.pull-right[
+&lt;div align="right"&gt;
+&lt;img src="https://www.frontiersin.org/files/Articles/254051/fpls-08-00421-HTML/image_m/fpls-08-00421-g002.jpg" width=400 height=400&gt;&lt;p&gt;Unmanned aerial vehicle&lt;a href="https://www.frontiersin.org/articles/10.3389/fpls.2017.00421/full"&gt; (Watanabe et al. 2017)&lt;/a&gt;
+&lt;/div&gt;
+]
+
+
+
+
+---
+# Pixelomics
+![](pix.png)
+
+
+
+
+---
+# Genomic information (e.g., SNPs)
+![](SNPs.png)
+
+.center[Repeat of numbers 0, 1, and 2]
+
+
+
+
+---
+# Quantitative genetics
+Connecting image data with genomic information 
+&lt;center&gt;
+&lt;div&gt;
+&lt;img src="plant_01.png" width=100 height=100&gt;
+=
+&lt;img src="SNPs.png" width=100 height=100&gt; + error 
+&lt;/div&gt;
+&lt;/center&gt;
+`\begin{align*}
+\mathbf{y} &amp;= \mathbf{g} + \boldsymbol{\epsilon} \\
+ &amp;\approx \mathbf{W}\mathbf{a} + \boldsymbol{\epsilon} 
+\end{align*}`
+We approximate unknown `\(\mathbf{g}\)` with `\(\mathbf{Wa}\)`. 
+`\begin{align*}
+\underbrace{\begin{bmatrix}    
+y_1\\
+y_2\\
+\vdots \\
+y_n\end{bmatrix}}_{n \times 1}  
+&amp;= \underbrace{\begin{bmatrix}
+   w_{11} &amp; w_{12} &amp; \cdots &amp; w_{1m} \\
+    w_{21} &amp; w_{22} &amp; \cdots &amp; w_{2m} \\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+    w_{n1} &amp; w_{n2} &amp; \cdots &amp; w_{nm}
+\end{bmatrix}}_{n \times m} \quad
+\underbrace{\begin{bmatrix}
+a_1\\
+a_2\\
+\vdots \\
+a_m\end{bmatrix}}_{m \times 1} 
++\underbrace{\begin{bmatrix}
+\epsilon_1\\
+\epsilon_2\\
+\vdots \\
+\epsilon_m\end{bmatrix}}_{n \times 1} 
+\end{align*}`
+
+where `\(n\)` is the number of individuals (e.g., accessions) and `\(m\)` is the number of SNPs. 
+
+
+
+
+
+
+
+
+
+
+
+---
+# Genomic selection
+![](a2.png)
+
+
+---
+# Genomic selection vs. Marker assisted selection
+![](a3.png)
+
+
+---
+# Projected shoot area
+&lt;img src="PSA5.png" height="530px" width="600px"/&gt;
+
+
+---
+# Longitudinal Cross-validation
+![](mackCV.png)
+
+
+---
+# Longitudinal prediction accuracy
+![](mackCV2.png)
+
+---
+# Longitudinal GWAS
+![](Fig2_alt.png)
+
+
+---
+# Persistent and time specific QTL signals
+![](Fig3.png)
+
+
+---
+
+# What is quantitative genetics?
+
+--
+
+Population genetics
+- **Mathematics** is language of population genetics, **population genetics** is language of **evolution**.
+
+--
+
+Quantitative genetics 
+- **Statistics** is language of quantitative genetics, **quantitative genetics** is language of **complex trait genetics**. 
+
+--
+
+**Phenotypes** first in quantitative genetics
+
+In the era of genomics, phenotype is **king**
+
+
+* Genomic prediction (Genomic selection)
+
+* Genome-wide association study (GWAS)
+
+
+
+
+&lt;center&gt;
+&lt;iframe src="https://giphy.com/embed/9ADoZQgs0tyww" width="400" height="200" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/obama-awesome-statistics-9ADoZQgs0tyww"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+&lt;/center&gt;
+
+
+
+
+---
+# The Morota Lab
+![](Morotalab.png)
+[http://morotalab.org/](http://morotalab.org/)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
