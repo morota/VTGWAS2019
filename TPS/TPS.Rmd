@@ -28,7 +28,7 @@ options(htmltools.dir.version = FALSE)
 
 ---
 
-# Complex traits
+# Genetic Analysis of Complex traits
 <img src="phenotype-plant.png" width=800 height=530>
 
 
@@ -207,11 +207,6 @@ where $n$ is the number of individuals (e.g., accessions) and $m$ is the number 
 ---
 # Genomic selection
 ![](a2.png)
-
-
----
-# Genomic selection vs. Marker assisted selection
-![](a3.png)
 
 
 ---
